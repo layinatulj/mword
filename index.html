@@ -12,13 +12,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body { font-family: 'Poppins', sans-serif; }
-    .hidden-section { display: none; }
-    .badge-c { @apply text-xs font-semibold px-2.5 py-0.5 rounded text-white; }
+    .hidden-section { display: none !important; }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
 
-  <!-- ================= LOG IN MODAL / PAGE ================= -->
+  <!-- ================= LOG IN MODAL ================= -->
   <div id="loginPage" class="fixed inset-0 bg-blue-600 bg-opacity-90 z-50 flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl shadow-2xl p-8 max-w-md w-full border-4 border-yellow-400">
       <div class="text-center mb-6">
@@ -75,7 +74,6 @@
         </div>
       </div>
 
-      <!-- Navigasi 3 Bar -->
       <nav class="flex gap-2 bg-slate-100 p-1.5 rounded-2xl">
         <button id="navMateri" onclick="switchTab('materi')" class="px-4 py-2 rounded-xl text-sm font-semibold transition flex items-center gap-2 bg-blue-600 text-white shadow">
           <i class="fa-solid fa-book-open"></i> 1. Materi
@@ -93,141 +91,92 @@
   <!-- ================= MAIN CONTENT ================= -->
   <main class="flex-grow max-w-5xl w-full mx-auto px-4 py-8">
 
-    <!-- TAB 1: MATERI -->
+    <!-- TAB 1: MATERI LENGKAP -->
     <section id="sectionMateri" class="space-y-8">
-      <!-- Banner Sambutan -->
       <div class="bg-gradient-to-r from-blue-500 to-indigo-600 rounded-3xl p-6 text-white shadow-lg flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="space-y-2">
           <span class="bg-yellow-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full uppercase">Unit 2: Olah Dokumen</span>
           <h1 class="text-2xl md:text-3xl font-extrabold">Mari Belajar Pengolahan Dokumen! 📝</h1>
-          <p class="text-blue-100 text-sm max-w-xl">Pelajari konsep dasar dokumen, dokumen digital, hingga fitur penting aplikasi pengolah kata Microsoft Word di bawah ini.</p>
+          <p class="text-blue-100 text-sm max-w-xl">Pelajari konsep dasar dokumen, jenis-jenis dokumen, hingga fitur penting aplikasi pengolah kata Microsoft Word di bawah ini.</p>
         </div>
         <div class="text-6xl text-yellow-300">
           <i class="fa-solid fa-file-word"></i>
         </div>
       </div>
 
-      <!-- Isi Materi -->
+      <!-- KONTEN MATERI UTAMA -->
       <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 space-y-8">
-        <!-- Section DOKUMEN -->
+        
+        <!-- BAB 1: PENGERTIAN DOKUMEN -->
         <div>
           <h2 class="text-xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-folder-open"></i> DOKUMEN
+            <i class="fa-solid fa-folder-open"></i> 1. Pengertian Dokumen & Dokumen Digital
           </h2>
-
-          <div class="space-y-6">
-            <div>
-              <h3 class="font-semibold text-lg text-slate-800 mb-2">1. Pengertian Dokumen</h3>
-              <p class="text-slate-600 leading-relaxed mb-3">Dokumen adalah kumpulan informasi yang dibuat, ditulis, disimpan, dan digunakan untuk menyampaikan suatu informasi atau keperluan tertentu. Dokumen dapat berupa teks, gambar, tabel, grafik, maupun gabungan dari berbagai bentuk informasi.</p>
-              <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4">
-                <p class="font-medium text-sm text-slate-700 mb-2">Contoh dokumen dalam kehidupan sehari-hari:</p>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm text-slate-600">
-                  <span class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Surat</span>
-                  <span class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Makalah</span>
-                  <span class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Laporan Kegiatan</span>
-                  <span class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Jadwal Pelajaran</span>
-                  <span class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Daftar Nilai</span>
-                  <span class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Undangan</span>
-                  <span class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Poster</span>
-                  <span class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Brosur</span>
-                  <span class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Presentasi</span>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 class="font-semibold text-lg text-slate-800 mb-2">2. Dokumen Digital</h3>
-              <p class="text-slate-600 leading-relaxed mb-3">Dokumen digital adalah dokumen yang dibuat, disimpan, dan dapat dibuka menggunakan perangkat elektronik seperti komputer, laptop, tablet, atau smartphone.</p>
-              
-              <div class="grid md:grid-cols-2 gap-4 my-4">
-                <div class="bg-blue-50 p-4 rounded-2xl border border-blue-100">
-                  <h4 class="font-semibold text-blue-800 mb-2">Contoh Dokumen Digital:</h4>
-                  <ul class="list-disc list-inside text-sm text-slate-700 space-y-1">
-                    <li>File Microsoft Word (<code class="bg-white px-1.5 py-0.5 rounded text-blue-600 font-mono">.docx</code>)</li>
-                    <li>File Microsoft PowerPoint (<code class="bg-white px-1.5 py-0.5 rounded text-blue-600 font-mono">.pptx</code>)</li>
-                    <li>File PDF (<code class="bg-white px-1.5 py-0.5 rounded text-blue-600 font-mono">.pdf</code>)</li>
-                    <li>Gambar (<code class="bg-white px-1.5 py-0.5 rounded text-blue-600 font-mono">.jpg</code>, <code class="bg-white px-1.5 py-0.5 rounded text-blue-600 font-mono">.png</code>)</li>
-                    <li>Video (<code class="bg-white px-1.5 py-0.5 rounded text-blue-600 font-mono">.mp4</code>)</li>
-                  </ul>
-                </div>
-
-                <div class="bg-emerald-50 p-4 rounded-2xl border border-emerald-100">
-                  <h4 class="font-semibold text-emerald-800 mb-2">Kelebihan Dokumen Digital:</h4>
-                  <ul class="list-disc list-inside text-sm text-slate-700 space-y-1">
-                    <li>Mudah disimpan dan diperbaiki/diedit.</li>
-                    <li>Mudah disalin dan dibagikan secara cepat.</li>
-                    <li>Tidak membutuhkan tempat penyimpanan fisik.</li>
-                    <li>Dapat diakses kapan saja lewat perangkat digital.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 class="font-semibold text-lg text-slate-800 mb-2">3. Struktur Dokumen</h3>
-              <p class="text-slate-600 leading-relaxed mb-3">Dokumen yang baik sebaiknya memiliki struktur yang jelas agar informasi mudah dipahami. Contoh struktur laporan:</p>
-              <div class="flex flex-wrap gap-2 text-sm font-medium">
-                <span class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-xl">1. Judul</span>
-                <span class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-xl">2. Identitas Penulis</span>
-                <span class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-xl">3. Pendahuluan</span>
-                <span class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-xl">4. Isi / Pembahasan</span>
-                <span class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-xl">5. Kesimpulan</span>
-                <span class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-xl">6. Daftar Pustaka</span>
-              </div>
-            </div>
+          <div class="space-y-4 text-slate-600 leading-relaxed">
+            <p><strong class="text-slate-800">Dokumen</strong> adalah surat atau benda berharga yang memuat tulisan, gambar, atau simbol yang digunakan sebagai bukti atau sumber informasi resmi/pribadi.</p>
+            <p><strong class="text-slate-800">Dokumen Digital</strong> adalah dokumen yang dibuat, diketik, disimpan, dan dibaca dalam format elektronik menggunakan komputer atau smartphone (seperti file .docx, .pdf, atau dokumen di Google Drive).</p>
           </div>
         </div>
 
-        <!-- Section MICROSOFT WORD -->
+        <!-- BAB 2: JENIS-JENIS DOKUMEN -->
         <div>
           <h2 class="text-xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-file-lines"></i> MICROSOFT WORD
+            <i class="fa-solid fa-layer-group"></i> 2. Pengelompokan Jenis Dokumen
           </h2>
-
-          <div class="space-y-6">
-            <div>
-              <h3 class="font-semibold text-lg text-slate-800 mb-2">1. Pengertian Microsoft Word</h3>
-              <p class="text-slate-600 leading-relaxed">Microsoft Word adalah aplikasi pengolah kata yang digunakan untuk membuat, mengedit, memformat, menyimpan, dan mencetak dokumen berbasis teks.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200">
+              <h3 class="font-bold text-slate-800 mb-1 text-sm"><i class="fa-solid fa-user text-blue-500"></i> Berdasarkan Kepentingan/Pemilik:</h3>
+              <ul class="list-disc list-inside text-xs text-slate-600 space-y-1">
+                <li><strong>Dokumen Pribadi:</strong> KTP, Akta Kelahiran, Paspor, Ijazah.</li>
+                <li><strong>Dokumen Niaga:</strong> Kuitansi, Cek, Nota Pembelian.</li>
+                <li><strong>Dokumen Pemerintah:</strong> Undang-Undang, Keputusan Presiden.</li>
+              </ul>
             </div>
-
-            <div>
-              <h3 class="font-semibold text-lg text-slate-800 mb-2">2. Fungsi Utama Microsoft Word</h3>
-              <div class="grid md:grid-cols-2 gap-4 text-sm">
-                <div class="border border-slate-200 p-4 rounded-2xl">
-                  <h4 class="font-bold text-slate-800 mb-1"><i class="fa-solid fa-file-circle-plus text-blue-500"></i> a. Membuat & Mengedit Teks</h4>
-                  <p class="text-slate-600">Membuat dokumen dari halaman kosong, menyalin, memindahkan, dan memperbaiki kesalahan ketik.</p>
-                </div>
-                <div class="border border-slate-200 p-4 rounded-2xl">
-                  <h4 class="font-bold text-slate-800 mb-1"><i class="fa-solid fa-font text-blue-500"></i> b. Memformat Teks & Paragraf</h4>
-                  <p class="text-slate-600">Mengubah jenis, ukuran, warna huruf, efek Bold/Italic/Underline, perataan teks, serta penomoran (Bullets & Numbering).</p>
-                </div>
-                <div class="border border-slate-200 p-4 rounded-2xl">
-                  <h4 class="font-bold text-slate-800 mb-1"><i class="fa-solid fa-image text-blue-500"></i> c. Menambahkan Gambar & Tabel</h4>
-                  <p class="text-slate-600">Menyisipkan visual ilustrasi dan membuat tabel data secara rapi.</p>
-                </div>
-                <div class="border border-slate-200 p-4 rounded-2xl">
-                  <h4 class="font-bold text-slate-800 mb-1"><i class="fa-solid fa-floppy-disk text-blue-500"></i> d. Menyimpan & Mencetak</h4>
-                  <p class="text-slate-600">Menyimpan file digital (<code class="text-blue-600 font-mono">.docx</code> atau <code class="text-blue-600 font-mono">.pdf</code>) dan mencetaknya ke kertas.</p>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 class="font-semibold text-lg text-slate-800 mb-2">3. Bagian-Bagian Penting Microsoft Word</h3>
-              <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-slate-700">
-                <li class="bg-slate-50 p-2.5 rounded-xl border border-slate-200"><strong>Title Bar:</strong> Menampilkan nama dokumen.</li>
-                <li class="bg-slate-50 p-2.5 rounded-xl border border-slate-200"><strong>Ribbon:</strong> Berisi kelompok tombol perintah.</li>
-                <li class="bg-slate-50 p-2.5 rounded-xl border border-slate-200"><strong>Tabs/Menu:</strong> Home, Insert, Layout, dll.</li>
-                <li class="bg-slate-50 p-2.5 rounded-xl border border-slate-200"><strong>Document Area:</strong> Lembar kerja pengetikan.</li>
-                <li class="bg-slate-50 p-2.5 rounded-xl border border-slate-200"><strong>Ruler:</strong> Pengatur margin & posisi teks.</li>
-                <li class="bg-slate-50 p-2.5 rounded-xl border border-slate-200"><strong>Status Bar:</strong> Informasi jumlah kata/halaman.</li>
+            <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200">
+              <h3 class="font-bold text-slate-800 mb-1 text-sm"><i class="fa-solid fa-shapes text-indigo-500"></i> Berdasarkan Bentuk Fisik:</h3>
+              <ul class="list-disc list-inside text-xs text-slate-600 space-y-1">
+                <li><strong>Dokumen Tekstual:</strong> Berisi teks/tulisan (buku, surat, artikel).</li>
+                <li><strong>Dokumen Nontekstual:</strong> Berisi gambar/peta/simbol (peta wilayah).</li>
+                <li><strong>Dokumen Korporil:</strong> Benda bersejarah (keris, arca, uang kuno).</li>
+                <li><strong>Dokumen Literer:</strong> Buku, majalah, komik simpanan perpustakaan.</li>
               </ul>
             </div>
           </div>
         </div>
+
+        <!-- BAB 3: APLIKASI PENGOLAH KATA -->
+        <div>
+          <h2 class="text-xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-desktop"></i> 3. Aplikasi Pengolahan Dokumen & Fiturnya
+          </h2>
+          <p class="text-slate-600 text-sm mb-4">Aplikasi utama yang paling sering digunakan untuk menyusun dokumen surat, laporan, maupun koran digital adalah <strong>Microsoft Word</strong>. Selain itu ada juga <strong>Canva</strong> (desain poster/brosur) dan <strong>PowerPoint</strong> (presentasi).</p>
+
+          <div class="bg-blue-50 p-4 rounded-2xl border border-blue-100 space-y-3">
+            <h3 class="font-bold text-blue-900 text-sm">Fitur-fitur Utama Microsoft Word:</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs text-slate-700">
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-font text-blue-600 mt-0.5"></i>
+                <div><strong>Formatting Teks:</strong> Mengatur Font, Ukuran (Size), Tebal (Bold), Miring (Italic), dan Warna Teks.</div>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-align-left text-blue-600 mt-0.5"></i>
+                <div><strong>Alignment & Columns:</strong> Mengatur rata kiri/tengah/kanan serta membuat layout 2 kolom seperti berita koran.</div>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-image text-blue-600 mt-0.5"></i>
+                <div><strong>Insert Picture:</strong> Menyisipkan gambar ke dalam teks dokumen agar tampilan lebih menarik.</div>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-file-export text-blue-600 mt-0.5"></i>
+                <div><strong>Penamaan & Penyimpanan File:</strong> Menyiapkan nama file proyek secara terstruktur (misal: <em>Koran_Kelompok3.docx</em>).</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Tombol Selesai Membaca -->
+      <!-- TOMBOL SELESAI BACA MATERI -->
       <div class="text-center pt-4">
         <button onclick="finishMateri()" class="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-4 rounded-2xl shadow-lg transition transform hover:-translate-y-1 flex items-center gap-3 mx-auto text-lg">
           <span>Saya Sudah Selesai Membaca Materi</span>
@@ -247,13 +196,11 @@
       </div>
 
       <form id="posttestForm" class="space-y-6">
-        <!-- Container Soal (Generated by JS) -->
         <div id="questionsContainer" class="space-y-6"></div>
-
         <div class="bg-white p-6 rounded-3xl border border-slate-200 text-center space-y-3">
           <p class="text-slate-600 text-sm">Pastikan semua 21 pertanyaan sudah kamu jawab dengan teliti.</p>
           <button type="button" onclick="submitPosttest()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3.5 rounded-2xl transition shadow-lg inline-flex items-center gap-2">
-            <span>Kirim Jawaban Posttest</span>
+            <span>Kirim Jawaban Posttest & Lanjut ke Refleksi</span>
             <i class="fa-solid fa-paper-plane"></i>
           </button>
         </div>
@@ -271,11 +218,9 @@
       </div>
 
       <form id="refleksiForm" class="space-y-8">
-        <!-- Part A1: Refleksi Diri -->
         <div class="bg-white p-6 rounded-3xl border border-slate-200 space-y-4">
           <h3 class="font-bold text-lg text-slate-800 border-b pb-2">A. Refleksi Diri (Skala 1–4)</h3>
           <p class="text-xs text-slate-500 mb-2">Keterangan: 1 = Belum mampu • 2 = Mulai mampu • 3 = Mampu • 4 = Sangat mampu</p>
-          
           <div class="overflow-x-auto">
             <table class="w-full text-sm text-left border-collapse">
               <thead>
@@ -287,23 +232,18 @@
                   <th class="p-3 text-center w-12 rounded-r-xl">4</th>
                 </tr>
               </thead>
-              <tbody id="refleksiDiriTable" class="divide-y divide-slate-100">
-                <!-- Radio rows JS -->
-              </tbody>
+              <tbody id="refleksiDiriTable" class="divide-y divide-slate-100"></tbody>
             </table>
           </div>
         </div>
 
-        <!-- Part A2: HOTS Questions -->
         <div class="bg-white p-6 rounded-3xl border border-slate-200 space-y-4">
           <h3 class="font-bold text-lg text-slate-800 border-b pb-2">Pertanyaan Refleksi HOTS</h3>
           <div id="hotsQuestionsContainer" class="space-y-4"></div>
         </div>
 
-        <!-- Part B: Kepuasan -->
         <div class="bg-white p-6 rounded-3xl border border-slate-200 space-y-4">
           <h3 class="font-bold text-lg text-slate-800 border-b pb-2">B. Refleksi Kepuasan Pembelajaran</h3>
-          <p class="text-xs text-slate-500 mb-2">Keterangan: 1 = Sangat tidak sesuai • 2 = Tidak sesuai • 3 = Sesuai • 4 = Sangat sesuai</p>
           <div class="overflow-x-auto">
             <table class="w-full text-sm text-left border-collapse">
               <thead>
@@ -315,17 +255,13 @@
                   <th class="p-3 text-center w-12 rounded-r-xl">4</th>
                 </tr>
               </thead>
-              <tbody id="kepuasanTable" class="divide-y divide-slate-100">
-                <!-- Radio rows JS -->
-              </tbody>
+              <tbody id="kepuasanTable" class="divide-y divide-slate-100"></tbody>
             </table>
           </div>
         </div>
 
-        <!-- Part D: Exit Ticket -->
         <div class="bg-white p-6 rounded-3xl border border-slate-200 space-y-4">
           <h3 class="font-bold text-lg text-slate-800 border-b pb-2">D. Exit Ticket (3–2–1)</h3>
-          
           <div class="space-y-4">
             <div>
               <label class="block font-semibold text-sm mb-1 text-slate-700">3 – Tiga hal yang saya temukan hari ini:</label>
@@ -342,56 +278,50 @@
           </div>
         </div>
 
-        <!-- Submit Button -->
         <div class="text-center">
-          <button type="button" onclick="submitFinalData()" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-10 py-4 rounded-2xl shadow-xl transition transform hover:-translate-y-1 inline-flex items-center gap-3 text-lg">
-            <span>Submit Akhir & Lihat Hasil</span>
+          <button type="button" onclick="submitFinalRefleksi()" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-10 py-4 rounded-2xl shadow-xl transition transform hover:-translate-y-1 inline-flex items-center gap-3 text-lg">
+            <span>Kirim Refleksi & Selesai</span>
             <i class="fa-solid fa-circle-check"></i>
           </button>
         </div>
       </form>
     </section>
 
-    <!-- SECTION HASIL (POPUP/MODAL) -->
-    <div id="resultModal" class="fixed inset-0 bg-slate-900 bg-opacity-80 z-50 flex items-center justify-center p-4 hidden-section">
-      <div class="bg-white rounded-3xl p-8 max-w-lg w-full text-center space-y-6 border-4 border-emerald-400">
+    <!-- MODAL HASIL -->
+    <div id="resultModal" style="display: none;" class="fixed inset-0 bg-slate-900 bg-opacity-80 z-50 flex items-center justify-center p-4">
+      <div class="bg-white rounded-3xl p-8 max-w-lg w-full text-center space-y-6 border-4 border-emerald-400 shadow-2xl">
         <div class="w-20 h-20 bg-emerald-100 text-emerald-500 rounded-full flex items-center justify-center mx-auto text-4xl">
           <i class="fa-solid fa-trophy"></i>
         </div>
         <div>
           <h2 class="text-2xl font-bold text-slate-800">Pembelajaran Selesai!</h2>
-          <p class="text-sm text-slate-500">Data & jawaban kamu telah berhasil tersimpan ke sistem.</p>
+          <p class="text-sm text-slate-500">Seluruh data Posttest & Refleksi kamu telah tersimpan terpisah di Google Sheets.</p>
         </div>
-
-        <div class="bg-slate-50 p-4 rounded-2xl space-y-2 border">
-          <p class="text-xs uppercase tracking-wider text-slate-400 font-bold">Hasil Posttest Kamu</p>
-          <div class="text-4xl font-extrabold text-blue-600" id="displayScore">0</div>
+        <div class="bg-slate-50 p-4 rounded-2xl space-y-2 border border-slate-200">
+          <p class="text-xs uppercase tracking-wider text-slate-400 font-bold">NILAI POSTTEST KAMU</p>
+          <div class="text-5xl font-extrabold text-blue-600" id="displayScore">0</div>
           <p class="text-sm font-medium text-slate-600" id="displayCorrect">0 dari 21 soal benar</p>
         </div>
-
-        <button onclick="location.reload()" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 rounded-xl transition">
-          Selesai & Selesai Pembelajaran
+        <button onclick="location.reload()" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3.5 rounded-xl transition">
+          Selesai & Keluar
         </button>
       </div>
     </div>
   </main>
 
-  <!-- ================= JAVASCRIPT ================= -->
   <script>
-    // URL Google Apps Script milik Anda (Tempelkan Web App URL dari GAS di sini)
-    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyTZPrujIIu7H60K4WJ6updgQV65bU2pJO5R4Xtzq9w8Go5IJ-qlSrSfl1cwoPyQfa7/exec";
+    // TEMPELKAN WEB APP URL DARI GOOGLE APPS SCRIPT DI SINI
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwUFbsBa8ggM1L5TAMGl_F9IqtaIsUwr6ThBc3K52wP9qcIJbDHxD_U8DRoh3If4MMo/exec";
 
-    // Data Siswa State
     let currentUser = { nama: "", kelas: "", absen: "" };
     let posttestAnswers = {};
     let calculatedScore = 0;
     let correctCount = 0;
 
-    // Soal Posttest Data (21 Soal)
     const posttestData = [
       { id: 1, level: "C1", q: "Seorang siswa diminta membuat surat izin mengikuti lomba. Dokumen tersebut termasuk media yang berisi informasi tertulis. Apa pengertian dokumen yang paling tepat?", opts: ["A. Semua benda yang dibuat dengan komputer", "B. Sesuatu yang memuat keterangan atau informasi dan dapat digunakan sebagai bukti", "C. Kumpulan gambar yang disimpan di internet", "D. Aplikasi untuk membuat presentasi"], ans: "B" },
       { id: 2, level: "C1", q: "Perhatikan daftar berikut:\n1. KTP\n2. Akta kelahiran\n3. Paspor\n4. Buku cerita\nManakah yang termasuk dokumen pribadi?", opts: ["A. 1, 2, dan 3", "B. 1 dan 4", "C. 2 dan 4", "D. 3 dan 4"], ans: "A" },
-      { id: 3, level: "C1", q: "Guru meminta siswa membuat artikel seperti koran menggunakan aplikasi pengolah kata. Aplikasi yang paling tepat digunakan adalah …", opts: ["A. Canva", "B. Microsoft Excel", "C. Microsoft Word", "D. Paint"], ans: "C" },
+      { id: 3, level: "C1", q: "Guru meminta siswa membuat artikel seperti koran menggunakan Microsoft Word. Aplikasi yang paling tepat digunakan adalah …", opts: ["A. Canva", "B. Microsoft Excel", "C. Microsoft Word", "D. Paint"], ans: "C" },
       { id: 4, level: "C1", q: "Salah satu fungsi utama dokumen adalah …", opts: ["A. Mengganti sistem operasi komputer", "B. Menjadi alat bukti dan penyimpan informasi", "C. Menghapus data secara otomatis", "D. Mempercepat koneksi internet"], ans: "B" },
       { id: 5, level: "C2", q: "Seorang petugas perpustakaan menyimpan majalah, buku, dan komik sebagai koleksi bacaan. Mengapa koleksi tersebut disebut dokumen literer?", opts: ["A. Karena digunakan sebagai alat pembayaran", "B. Karena berupa benda sejarah", "C. Karena ditulis, dicetak, atau direkam sebagai sumber informasi", "D. Karena hanya dimiliki pemerintah"], ans: "C" },
       { id: 6, level: "C2", q: "Sebuah museum menyimpan keris, arca, dan uang kuno sebagai koleksi. Jenis dokumen tersebut adalah …", opts: ["A. Privat", "B. Korporil", "C. Primer", "D. Tekstual"], ans: "B" },
@@ -412,7 +342,6 @@
       { id: 21, level: "C5", q: "Setelah menyelesaikan proyek, guru meminta siswa melakukan presentasi dan menjawab pertanyaan. Alasan kegiatan tersebut penting dalam PjBL adalah …", opts: ["A. Agar siswa menghafal isi modul", "B. Melatih komunikasi, mempertanggungjawabkan hasil karya, dan menerima masukan", "C. Mengurangi waktu praktik", "D. Menentukan siapa yang paling cepat mengetik"], ans: "B" }
     ];
 
-    // Refleksi Diri Questions
     const refleksiDiriList = [
       "Saya memahami pengertian dan fungsi dokumen setelah mengamati contoh yang diberikan.",
       "Saya dapat menggunakan Microsoft Word untuk mengetik dan mengolah dokumen.",
@@ -421,7 +350,6 @@
       "Saya mampu menjelaskan hasil temuan atau kesimpulan yang saya peroleh selama pembelajaran."
     ];
 
-    // HOTS Questions
     const hotsList = [
       "Apa hal baru yang kamu temukan tentang Microsoft Word setelah mengamati contoh dan mencoba mengolah dokumen? Jelaskan.",
       "Bagian kegiatan menemukan cara menggunakan fitur Microsoft Word mana yang menurutmu paling menantang? Mengapa?",
@@ -430,7 +358,6 @@
       "Bagaimana keterampilan menggunakan Microsoft Word yang kamu temukan hari ini dapat kamu manfaatkan dalam kehidupan sehari-hari atau kegiatan belajar di masa depan?"
     ];
 
-    // Kepuasan Questions
     const kepuasanList = [
       "Stimulus atau contoh yang diberikan guru membantu saya menemukan konsep tentang Microsoft Word.",
       "Kegiatan mengamati dan mencoba membantu saya memahami fungsi fitur Microsoft Word.",
@@ -439,11 +366,11 @@
       "Saya merasa puas dengan pembelajaran Microsoft Word hari ini."
     ];
 
-    // Init Page & Render Form
-    window.onload = () => {
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("resultModal").style.display = "none";
       renderPosttest();
       renderRefleksi();
-    };
+    });
 
     function handleLogin(e) {
       e.preventDefault();
@@ -451,7 +378,7 @@
       currentUser.kelas = document.getElementById("inputKelas").value;
       currentUser.absen = document.getElementById("inputAbsen").value;
 
-      document.getElementById("userInfo").innerHTML = `<i class="fa-solid fa-user-check"></i> ${currentUser.nama} (${currentUser.kelas} / ${currentUser.absen})`;
+      document.getElementById("userInfo").innerHTML = `<i class="fa-solid fa-user-check"></i> ${currentUser.nama} (${currentUser.kelas} / Absen: ${currentUser.absen})`;
       document.getElementById("loginPage").classList.add("hidden-section");
     }
 
@@ -460,7 +387,6 @@
       document.getElementById("sectionPosttest").classList.add("hidden-section");
       document.getElementById("sectionRefleksi").classList.add("hidden-section");
 
-      // Reset Styles
       ["navMateri", "navPosttest", "navRefleksi"].forEach(id => {
         const btn = document.getElementById(id);
         if(!btn.disabled) {
@@ -481,19 +407,17 @@
     }
 
     function finishMateri() {
-      // Unlock Posttest, Lock Materi
       const navPost = document.getElementById("navPosttest");
       navPost.disabled = false;
       navPost.classList.remove("text-slate-400", "cursor-not-allowed");
       document.getElementById("lockPosttest").className = "fa-solid fa-pen-to-square";
-      
-      switchTab('posttest');
 
-      // Lock Materi tab
       const navMat = document.getElementById("navMateri");
       navMat.disabled = true;
       navMat.className = "px-4 py-2 rounded-xl text-sm font-semibold transition flex items-center gap-2 text-slate-400 cursor-not-allowed";
       navMat.innerHTML = `<i class="fa-solid fa-lock"></i> 1. Materi`;
+      
+      switchTab('posttest');
     }
 
     function renderPosttest() {
@@ -521,7 +445,6 @@
     }
 
     function submitPosttest() {
-      // Validate all answered
       let allAnswered = true;
       correctCount = 0;
       posttestAnswers = {};
@@ -543,27 +466,31 @@
         return;
       }
 
-      // Hitung Nilai (Skala 100)
       calculatedScore = Math.round((correctCount / posttestData.length) * 100);
 
-      // Unlock Refleksi & Open Tab Refleksi (Muka semua navigasi terbuka)
+      // KIRIM DATA POSTTEST KE SHEET "posttest"
+      const payloadPosttest = {
+        jenisForm: "posttest",
+        nama: currentUser.nama,
+        kelas: currentUser.kelas,
+        absen: currentUser.absen,
+        nilaiPosttest: calculatedScore,
+        jumlahBenar: correctCount,
+        jawabanPosttest: posttestAnswers
+      };
+
+      sendToGoogleSheet(payloadPosttest);
+
+      // Buka akses Refleksi & beralih tab
       const navRef = document.getElementById("navRefleksi");
       navRef.disabled = false;
       navRef.classList.remove("text-slate-400", "cursor-not-allowed");
       document.getElementById("lockRefleksi").className = "fa-solid fa-brain";
 
-      const navMat = document.getElementById("navMateri");
-      navMat.disabled = false;
-      navMat.innerHTML = `<i class="fa-solid fa-book-open"></i> 1. Materi`;
-
-      const navPost = document.getElementById("navPosttest");
-      navPost.disabled = false;
-
       switchTab('refleksi');
     }
 
     function renderRefleksi() {
-      // Render Refleksi Diri
       const tableDiri = document.getElementById("refleksiDiriTable");
       tableDiri.innerHTML = refleksiDiriList.map((item, idx) => `
         <tr>
@@ -576,7 +503,6 @@
         </tr>
       `).join('');
 
-      // Render HOTS
       const containerHots = document.getElementById("hotsQuestionsContainer");
       containerHots.innerHTML = hotsList.map((q, idx) => `
         <div>
@@ -585,7 +511,6 @@
         </div>
       `).join('');
 
-      // Render Kepuasan
       const tableKepuasan = document.getElementById("kepuasanTable");
       tableKepuasan.innerHTML = kepuasanList.map((item, idx) => `
         <tr>
@@ -599,69 +524,65 @@
       `).join('');
     }
 
-    function submitFinalData() {
+    function submitFinalRefleksi() {
       const form = document.getElementById("refleksiForm");
       if (!form.checkValidity()) {
         form.reportValidity();
         return;
       }
 
-      // Collect Refleksi Diri
       let refleksiDiriRes = [];
       refleksiDiriList.forEach((_, idx) => {
         const val = document.querySelector(`input[name="diri_${idx}"]:checked`).value;
         refleksiDiriRes.push(val);
       });
 
-      // Collect HOTS
       let refleksiHotsRes = [];
       hotsList.forEach((_, idx) => {
         refleksiHotsRes.push(document.getElementById(`hots_${idx}`).value.trim());
       });
 
-      // Collect Kepuasan
       let kepuasanRes = [];
       kepuasanList.forEach((_, idx) => {
         const val = document.querySelector(`input[name="puas_${idx}"]:checked`).value;
         kepuasanRes.push(val);
       });
 
-      // Collect Exit Ticket
       let exitTicketRes = {
         hal3: document.getElementById("exit3").value.trim(),
         hal2: document.getElementById("exit2").value.trim(),
         hal1: document.getElementById("exit1").value.trim()
       };
 
-      // Payload Final
-      const payload = {
+      // KIRIM DATA REFLEKSI KE SHEET "refleksi"
+      const payloadRefleksi = {
+        jenisForm: "refleksi",
         nama: currentUser.nama,
         kelas: currentUser.kelas,
         absen: currentUser.absen,
-        nilaiPosttest: calculatedScore,
-        jumlahBenar: correctCount,
-        jawabanPosttest: posttestAnswers,
         refleksiDiri: refleksiDiriRes,
         refleksiHots: refleksiHotsRes,
         kepuasan: kepuasanRes,
         exitTicket: exitTicketRes
       };
 
-      // Kirim Data ke Google Apps Script Spreadsheet
-      fetch(WEB_APP_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      }).then(() => {
-        // Show Score Modal
-        document.getElementById("displayScore").innerText = calculatedScore;
-        document.getElementById("displayCorrect").innerText = `${correctCount} dari 21 soal benar`;
-        document.getElementById("resultModal").classList.remove("hidden-section");
-      }).catch(err => {
-        console.error(err);
-        alert("Terjadi kesalahan pengiriman data, namun skor kamu adalah: " + calculatedScore);
-      });
+      sendToGoogleSheet(payloadRefleksi);
+
+      // TAMPILKAN MODAL SELESAI
+      document.getElementById("displayScore").innerText = calculatedScore;
+      document.getElementById("displayCorrect").innerText = `${correctCount} dari 21 soal benar`;
+      document.getElementById("resultModal").style.display = "flex";
+    }
+
+    function sendToGoogleSheet(payload) {
+      if (WEB_APP_URL && WEB_APP_URL !== "GANTI_DENGAN_URL_WEB_APP_GOOGLE_SCRIPT_ANDA") {
+        fetch(WEB_APP_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(payload)
+        }).catch(err => console.error("Error Send Sheet:", err));
+      }
     }
   </script>
 </body>
