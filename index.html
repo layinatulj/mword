@@ -319,28 +319,259 @@
     let correctCount = 0;
 
     const posttestData = [
-      { id: 1, level: "C1", q: "Seorang siswa diminta membuat surat izin mengikuti lomba. Dokumen tersebut termasuk media yang berisi informasi tertulis. Apa pengertian dokumen yang paling tepat?", opts: ["A. Semua benda yang dibuat dengan komputer", "B. Sesuatu yang memuat keterangan atau informasi dan dapat digunakan sebagai bukti", "C. Kumpulan gambar yang disimpan di internet", "D. Aplikasi untuk membuat presentasi"], ans: "B" },
-      { id: 2, level: "C1", q: "Perhatikan daftar berikut:\n1. KTP\n2. Akta kelahiran\n3. Paspor\n4. Buku cerita\nManakah yang termasuk dokumen pribadi?", opts: ["A. 1, 2, dan 3", "B. 1 dan 4", "C. 2 dan 4", "D. 3 dan 4"], ans: "A" },
-      { id: 3, level: "C1", q: "Guru meminta siswa membuat artikel seperti koran menggunakan Microsoft Word. Aplikasi yang paling tepat digunakan adalah …", opts: ["A. Canva", "B. Microsoft Excel", "C. Microsoft Word", "D. Paint"], ans: "C" },
-      { id: 4, level: "C1", q: "Salah satu fungsi utama dokumen adalah …", opts: ["A. Mengganti sistem operasi komputer", "B. Menjadi alat bukti dan penyimpan informasi", "C. Menghapus data secara otomatis", "D. Mempercepat koneksi internet"], ans: "B" },
-      { id: 5, level: "C2", q: "Seorang petugas perpustakaan menyimpan majalah, buku, dan komik sebagai koleksi bacaan. Mengapa koleksi tersebut disebut dokumen literer?", opts: ["A. Karena digunakan sebagai alat pembayaran", "B. Karena berupa benda sejarah", "C. Karena ditulis, dicetak, atau direkam sebagai sumber informasi", "D. Karena hanya dimiliki pemerintah"], ans: "C" },
-      { id: 6, level: "C2", q: "Sebuah museum menyimpan keris, arca, dan uang kuno sebagai koleksi. Jenis dokumen tersebut adalah …", opts: ["A. Privat", "B. Korporil", "C. Primer", "D. Tekstual"], ans: "B" },
-      { id: 7, level: "C2", q: "Rani ingin membuat poster kegiatan sekolah yang menarik dengan banyak elemen desain. Aplikasi yang paling sesuai adalah …", opts: ["A. Microsoft Word", "B. Canva", "C. Notepad", "D. Microsoft Excel"], ans: "B" },
-      { id: 8, level: "C2", q: "Perhatikan dua dokumen berikut.\nDokumen A: Koran berisi berita.\nDokumen B: Peta wilayah Kabupaten Pasuruan.\nPerbedaan utama keduanya adalah …", opts: ["A. Koran bersifat nontekstual, peta bersifat tekstual.", "B. Koran bersifat tekstual, peta bersifat nontekstual.", "C. Keduanya termasuk dokumen privat.", "D. Keduanya merupakan dokumen sejarah."], ans: "B" },
-      { id: 9, level: "C3", q: "Kelompok Andi mendapat tugas membuat layout koran sekolah. Mereka ingin membuat judul besar, artikel dua kolom, serta menyisipkan gambar. Perangkat lunak yang paling tepat digunakan adalah …", opts: ["A. Microsoft Word", "B. Calculator", "C. Paint", "D. Windows Explorer"], ans: "A" },
-      { id: 10, level: "C3", q: "Seorang siswa menyimpan hasil proyek dengan nama Dokumen1, Baru, dan Latihan. Ketika guru mengumpulkan tugas, siswa kesulitan menemukan file yang benar. Agar sesuai prosedur proyek pada modul, nama file yang paling tepat adalah …", opts: ["A. Latihan Final", "B. Word Baru", "C. Koran Contoh 2 Kelompok 3", "D. Tugas Saya"], ans: "C" },
-      { id: 11, level: "C3", q: "Dalam proyek PjBL, setiap anggota memiliki tanggung jawab berbeda. Ketua mengetik Contoh 1, sedangkan anggota lain mengerjakan Contoh 2–4. Tujuan pembagian tugas tersebut adalah …", opts: ["A. Agar pekerjaan hanya dilakukan ketua", "B. Melatih kolaborasi dan tanggung jawab setiap anggota", "C. Mengurangi jumlah anggota kelompok", "D. Mempercepat nilai guru"], ans: "B" },
-      { id: 12, level: "C3", q: "Budi ingin menyampaikan hasil proyek koran kepada teman-temannya secara lisan dengan tampilan slide. Setelah dokumen selesai dibuat di Word, aplikasi yang paling tepat digunakan untuk presentasi adalah …", opts: ["A. Canva", "B. PowerPoint", "C. Excel", "D. Browser"], ans: "B" },
-      { id: 13, level: "C3", q: "Sekolah akan membuat brosur penerimaan siswa baru yang berisi teks, ikon, dan ilustrasi menarik. Pilihan aplikasi yang paling efektif adalah …", opts: ["A. Microsoft Word", "B. Canva", "C. Notepad", "D. Calculator"], ans: "B" },
-      { id: 14, level: "C4", q: "Perhatikan situasi berikut: Kelompok A membuat koran digital, tetapi seluruh teks menggunakan ukuran huruf yang sama, tidak ada judul, dan gambar diletakkan sembarangan sehingga sulit dibaca. Analisis yang paling tepat adalah …", opts: ["A. Isi berita salah karena terlalu pendek.", "B. Tata letak dokumen belum memperhatikan hierarki informasi.", "C. Dokumen termasuk dokumen sejarah.", "D. Masalahnya hanya pada warna kertas."], ans: "B" },
-      { id: 15, level: "C4", q: "Seorang siswa mengelompokkan dokumen berikut:\nKTP -> Pemerintah | Paspor -> Pribadi | Kuitansi -> Niaga | Peta -> Nontekstual.\nData yang kurang tepat adalah …", opts: ["A. KTP", "B. Paspor", "C. Kuitansi", "D. Peta"], ans: "A" },
-      { id: 16, level: "C4", q: "Guru meminta siswa memilih aplikasi sesuai kebutuhan:\n- Menulis laporan: Word\n- Membuat slide: PowerPoint\n- Mendesain poster: Canva\nMengapa pembagian tersebut dianggap efektif?", opts: ["A. Semua aplikasi memiliki fungsi yang sama.", "B. Setiap aplikasi memiliki keunggulan sesuai jenis dokumen yang dibuat.", "C. Word hanya digunakan untuk gambar.", "D. Canva hanya dapat membuka file PDF."], ans: "B" },
-      { id: 17, level: "C4", q: "Dua kelompok mengerjakan proyek yang sama:\nKelompok X: langsung mengetik tanpa membuat jadwal.\nKelompok Y: menyusun jadwal, membagi tugas, lalu mengerjakan proyek.\nKelompok yang lebih sesuai dengan sintaks PjBL adalah …", opts: ["A. Kelompok X karena lebih cepat", "B. Kelompok X karena tidak perlu diskusi", "C. Kelompok Y karena mengikuti tahapan perencanaan proyek", "D. Keduanya sama"], ans: "C" },
-      { id: 18, level: "C5", q: "OSIS akan membuat majalah digital sekolah. Mereka memilih Word untuk menulis artikel, PowerPoint untuk presentasi, dan Canva untuk desain sampul. Keputusan yang paling tepat adalah …", opts: ["A. Menggunakan Word saja", "B. Menggunakan Canva saja", "C. Menggabungkan ketiga aplikasi sesuai fungsinya", "D. Menggunakan Excel untuk seluruh pekerjaan"], ans: "C" },
-      { id: 19, level: "C5", q: "Sebuah kelompok diminta memperbaiki hasil koran digital. Guru memberi 4 saran: (1) Judul lebih menonjol, (2) Artikel dua kolom, (3) Gambar relevan, (4) Menghapus teks agar sederhana. Saran yang paling tepat adalah …", opts: ["A. 1, 2, dan 3", "B. 1 dan 4", "C. 2 dan 4", "D. 3 dan 4"], ans: "A" },
-      { id: 20, level: "C5", q: "Sekolah ingin menyimpan dokumen penting selama puluhan tahun agar mudah dicari dan tetap terjaga keasliannya. Langkah yang paling bijaksana adalah …", opts: ["A. Menyimpan tanpa nama file", "B. Menghapus dokumen lama", "C. Mengelola dokumen secara teratur dan memberi identitas yang jelas", "D. Menyimpan semua file di desktop"], ans: "C" },
-      { id: 21, level: "C5", q: "Setelah menyelesaikan proyek, guru meminta siswa melakukan presentasi dan menjawab pertanyaan. Alasan kegiatan tersebut penting dalam PjBL adalah …", opts: ["A. Agar siswa menghafal isi modul", "B. Melatih komunikasi, mempertanggungjawabkan hasil karya, dan menerima masukan", "C. Mengurangi waktu praktik", "D. Menentukan siapa yang paling cepat mengetik"], ans: "B" }
-    ];
+  { 
+    id: 1, 
+    level: "C1", 
+    q: "Seorang siswa diminta membuat surat izin mengikuti lomba. Dokumen tersebut termasuk media yang berisi informasi tertulis. Apa pengertian dokumen yang paling tepat?", 
+    opts: [
+      "A. Semua benda yang dibuat dengan komputer", 
+      "B. Sesuatu yang memuat keterangan atau informasi dan dapat digunakan sebagai bukti", 
+      "C. Kumpulan gambar yang disimpan di internet", 
+      "D. Aplikasi untuk membuat presentasi"
+    ], 
+    ans: "B" 
+  },
+  { 
+    id: 2, 
+    level: "C1", 
+    q: "Perhatikan daftar berikut:\n1. KTP\n2. Akta kelahiran\n3. Paspor\n4. Buku cerita\nManakah yang termasuk dokumen pribadi?", 
+    opts: [
+      "A. 1, 2, dan 3", 
+      "B. 1 dan 4", 
+      "C. 2 dan 4", 
+      "D. 3 dan 4"
+    ], 
+    ans: "A" 
+  },
+  { 
+    id: 3, 
+    level: "C1", 
+    q: "Guru meminta siswa membuat artikel dengan tampilan menyerupai koran, lengkap dengan pengaturan teks, kolom, gambar, dan tata letak. Aplikasi yang paling tepat digunakan untuk membuat artikel tersebut adalah …", 
+    opts: [
+      "A. Canva", 
+      "B. Microsoft Excel", 
+      "C. Microsoft Word", 
+      "D. Paint"
+    ], 
+    ans: "C" 
+  },
+  { 
+    id: 4, 
+    level: "C1", 
+    q: "Salah satu fungsi utama dokumen adalah …", 
+    opts: [
+      "A. Mengganti sistem operasi komputer", 
+      "B. Menjadi alat bukti dan penyimpan informasi", 
+      "C. Menghapus data secara otomatis", 
+      "D. Mempercepat koneksi internet"
+    ], 
+    ans: "B" 
+  },
+  { 
+    id: 5, 
+    level: "C2", 
+    q: "Seorang petugas perpustakaan menyimpan majalah, buku, dan komik sebagai koleksi bacaan. Mengapa koleksi tersebut disebut dokumen literer?", 
+    opts: [
+      "A. Karena digunakan sebagai alat pembayaran", 
+      "B. Karena berupa benda sejarah", 
+      "C. Karena ditulis, dicetak, atau direkam sebagai sumber informasi", 
+      "D. Karena hanya dimiliki pemerintah"
+    ], 
+    ans: "C" 
+  },
+  { 
+    id: 6, 
+    level: "C2", 
+    q: "Sebuah museum menyimpan keris, arca, dan uang kuno sebagai koleksi. Jenis dokumen tersebut adalah …", 
+    opts: [
+      "A. Privat", 
+      "B. Korporil", 
+      "C. Primer", 
+      "D. Tekstual"
+    ], 
+    ans: "B" 
+  },
+  { 
+    id: 7, 
+    level: "C2", 
+    q: "Rani ingin membuat poster kegiatan sekolah yang menarik dengan banyak elemen desain. Aplikasi yang paling sesuai adalah …", 
+    opts: [
+      "A. Microsoft Word", 
+      "B. Canva", 
+      "C. Notepad", 
+      "D. Microsoft Excel"
+    ], 
+    ans: "B" 
+  },
+  { 
+    id: 8, 
+    level: "C2", 
+    q: "Perhatikan dua dokumen berikut.\nDokumen A: Koran berisi berita.\nDokumen B: Peta wilayah Kabupaten Pasuruan.\nPerbedaan utama keduanya adalah …", 
+    opts: [
+      "A. Koran bersifat nontekstual, peta bersifat tekstual.", 
+      "B. Koran bersifat tekstual, peta bersifat nontekstual.", 
+      "C. Keduanya termasuk dokumen privat.", 
+      "D. Keduanya merupakan dokumen sejarah."
+    ], 
+    ans: "B" 
+  },
+  { 
+    id: 9, 
+    level: "C3", 
+    q: "Kelompok Andi mendapat tugas membuat layout koran sekolah. Mereka ingin membuat judul besar, artikel dua kolom, serta menyisipkan gambar. Perangkat lunak yang paling tepat digunakan adalah …", 
+    opts: [
+      "A. Microsoft Word", 
+      "B. Calculator", 
+      "C. Paint", 
+      "D. Windows Explorer"
+    ], 
+    ans: "A" 
+  },
+  { 
+    id: 10, 
+    level: "C3", 
+    q: "Seorang siswa menyimpan hasil proyek dengan nama Dokumen1, Baru, dan Latihan. Ketika guru mengumpulkan tugas, siswa kesulitan menemukan file yang benar. Agar sesuai prosedur proyek pada modul, nama file yang paling tepat adalah …", 
+    opts: [
+      "A. Latihan Final", 
+      "B. Word Baru", 
+      "C. Koran Contoh 2 Kelompok 3", 
+      "D. Tugas Saya"
+    ], 
+    ans: "C" 
+  },
+  { 
+    id: 11, 
+    level: "C3", 
+    q: "Seorang siswa ingin membuat judul artikel menjadi lebih tebal dan mudah terlihat. Fitur Microsoft Word yang dapat digunakan untuk melakukan hal tersebut adalah …", 
+    opts: [
+      "A. Italic", 
+      "B. Bold", 
+      "C. Underline", 
+      "D. Align Left"
+    ], 
+    ans: "B" 
+  },
+  { 
+    id: 12, 
+    level: "C3", 
+    q: "Budi ingin menyampaikan hasil proyek koran kepada teman-temannya secara lisan dengan tampilan slide. Setelah dokumen selesai dibuat di Word, aplikasi yang paling tepat digunakan untuk presentasi adalah …", 
+    opts: [
+      "A. Canva", 
+      "B. PowerPoint", 
+      "C. Excel", 
+      "D. Browser"
+    ], 
+    ans: "B" 
+  },
+  { 
+    id: 13, 
+    level: "C3", 
+    q: "Sekolah akan membuat brosur penerimaan siswa baru yang berisi teks, ikon, dan ilustrasi menarik. Pilihan aplikasi yang paling efektif adalah …", 
+    opts: [
+      "A. Microsoft Word", 
+      "B. Canva", 
+      "C. Notepad", 
+      "D. Calculator"
+    ], 
+    ans: "B" 
+  },
+  { 
+    id: 14, 
+    level: "C4", 
+    q: "Perhatikan situasi berikut: Kelompok A membuat koran digital, tetapi seluruh teks menggunakan ukuran huruf yang sama, tidak ada judul, dan gambar diletakkan sembarangan sehingga sulit dibaca. Analisis yang paling tepat adalah …", 
+    opts: [
+      "A. Isi berita salah karena terlalu pendek.", 
+      "B. Tata letak dokumen belum memperhatikan hierarki informasi.", 
+      "C. Dokumen termasuk dokumen sejarah.", 
+      "D. Masalahnya hanya pada warna kertas."
+    ], 
+    ans: "B" 
+  },
+  { 
+    id: 15, 
+    level: "C4", 
+    q: "Seorang siswa mengelompokkan dokumen berikut:\nKTP -> Pemerintah | Paspor -> Pribadi | Kuitansi -> Niaga | Peta -> Nontekstual.\nData yang kurang tepat adalah …", 
+    opts: [
+      "A. KTP", 
+      "B. Paspor", 
+      "C. Kuitansi", 
+      "D. Peta"
+    ], 
+    ans: "A" 
+  },
+  { 
+    id: 16, 
+    level: "C4", 
+    q: "Guru meminta siswa memilih aplikasi sesuai kebutuhan:\n- Menulis laporan: Word\n- Membuat slide: PowerPoint\n- Mendesain poster: Canva\nMengapa pembagian tersebut dianggap efektif?", 
+    opts: [
+      "A. Semua aplikasi memiliki fungsi yang sama.", 
+      "B. Setiap aplikasi memiliki keunggulan sesuai jenis dokumen yang dibuat.", 
+      "C. Word hanya digunakan untuk gambar.", 
+      "D. Canva hanya dapat membuka file PDF."
+    ], 
+    ans: "B" 
+  },
+  { 
+    id: 17, 
+    level: "C4", 
+    q: "Perhatikan situasi berikut!\nDina membuat artikel di Microsoft Word. Ia ingin judul artikel berada di tengah halaman, memiliki ukuran huruf lebih besar, dan dicetak tebal. Namun, setelah mengatur teks, judul masih terlihat sama seperti teks isi.\nBerdasarkan situasi tersebut, fitur yang perlu dianalisis dan digunakan Dina agar judul sesuai dengan kebutuhan adalah …", 
+    opts: [
+      "A. Align Center, Font Size, dan Bold", 
+      "B. Align Left, Italic, dan Underline", 
+      "C. Bullets, Numbering, dan Line Spacing", 
+      "D. Insert Table, Shapes, dan WordArt"
+    ], 
+    ans: "A" 
+  },
+  { 
+    id: 18, 
+    level: "C5", 
+    q: "OSIS akan membuat majalah digital sekolah. Mereka memilih Word untuk menulis artikel, PowerPoint untuk presentasi, dan Canva untuk desain sampul. Keputusan yang paling tepat adalah …", 
+    opts: [
+      "A. Menggunakan Word saja", 
+      "B. Menggunakan Canva saja", 
+      "C. Menggabungkan ketiga aplikasi sesuai fungsinya", 
+      "D. Menggunakan Excel untuk seluruh pekerjaan"
+    ], 
+    ans: "C" 
+  },
+  { 
+    id: 19, 
+    level: "C5", 
+    q: "Sebuah kelompok diminta memperbaiki hasil koran digital. Guru memberi 4 saran: (1) Judul lebih menonjol, (2) Artikel dua kolom, (3) Gambar relevan, (4) Menghapus teks agar sederhana. Saran yang paling tepat adalah …", 
+    opts: [
+      "A. 1, 2, dan 3", 
+      "B. 1 dan 4", 
+      "C. 2 dan 4", 
+      "D. 3 dan 4"
+    ], 
+    ans: "A" 
+  },
+  { 
+    id: 20, 
+    level: "C5", 
+    q: "Sekolah ingin menyimpan dokumen penting selama puluhan tahun agar mudah dicari dan tetap terjaga keasliannya. Langkah yang paling bijaksana adalah …", 
+    opts: [
+      "A. Menyimpan tanpa nama file", 
+      "B. Menghapus dokumen lama", 
+      "C. Mengelola dokumen secara teratur dan memberi identitas yang jelas", 
+      "D. Menyimpan semua file di desktop"
+    ], 
+    ans: "C" 
+  },
+  { 
+    id: 21, 
+    level: "C5", 
+    q: "Andi membuat artikel di Microsoft Word. Ia menggunakan ukuran huruf yang berbeda-beda, beberapa kata dicetak tebal, judul diletakkan di tengah, dan gambar disisipkan di antara paragraf. Namun, hasil akhirnya terlihat kurang rapi dan sulit dibaca.\nMenurutmu, tindakan yang paling tepat untuk memperbaiki tampilan artikel tersebut adalah …", 
+    opts: [
+      "A. Menghapus semua gambar agar artikel lebih sederhana", 
+      "B. Menggunakan fitur pengaturan font, perataan teks, dan tata letak gambar secara konsisten", 
+      "C. Memperbesar semua ukuran huruf agar tulisan lebih mudah dibaca", 
+      "D. Membuat seluruh teks menjadi tebal agar terlihat lebih jelas"
+    ], 
+    ans: "B" 
+  }
+];
 
     const refleksiDiriList = [
       "Saya memahami pengertian dan fungsi dokumen setelah mengamati contoh yang diberikan.",
